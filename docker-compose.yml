@@ -19,7 +19,7 @@ services:
     networks:
      - appnet
     depends_on:
-      - server
+      - application
     volumes:
       - ./application/src:/var/www/html
   redis:
@@ -38,9 +38,10 @@ services:
     networks:
      - appnet
      
-  networks:
-    appnet:
-      driver: "bridge"
-  volumes:
-    data:
-      driver: "local"
+networks:
+  appnet:
+    driver: "bridge"
+volumes:
+  data:
+    driver: "local"
+
