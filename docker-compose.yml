@@ -15,7 +15,7 @@ services:
       dockerfile: gateway/docker/Dockerfile
     image: ossaijad/phpappgateway:latest
     ports:
-     - "8080:80"
+     - "80:80"
     networks:
      - appnet
     depends_on:
@@ -37,11 +37,9 @@ services:
      - data:/var/lib/mysql
     networks:
      - appnet
-     
 networks:
   appnet:
     driver: "bridge"
 volumes:
   data:
     driver: "local"
-
